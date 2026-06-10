@@ -1,0 +1,181 @@
+/* Core Page Layout */
+.board-container {
+  padding: 24px;
+  font-family: sans-serif;
+  max-width: 1400px; /* Gives plenty of room for horizontal columns */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers all child elements horizontally */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Header Container */
+.board-header {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board-header h1 {
+  margin-bottom: 16px;
+}
+
+/* Container for Reset Button & Column Creator Form */
+.in-header {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centers items horizontally */
+  align-items: flex-start; /* Aligns them nicely at the top edge */
+  gap: 24px;
+  flex-wrap: wrap; /* Ensures responsiveness on smaller displays */
+}
+
+.clear-data-btn {
+  background-color: #fff;
+  color: #ff4d4f;
+  border: 1px solid #ff4d4f;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  height: 40px; /* Matches the vertical height of form elements */
+  box-sizing: border-box;
+}
+
+.clear-data-btn:hover {
+  background-color: #ff4d4f;
+  color: #fff;
+}
+
+/* Management Deck for Task Creation Form */
+.management-deck {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center; /* Centers the Task Form */
+}
+
+/* Individual form component containers */
+.column-creator-container {
+  background-color: #f9f9f9;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  min-width: 320px;
+  max-width: 450px;
+  box-sizing: border-box;
+}
+
+.column-creator-container h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.column-creator-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.column-creator-form input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.color-picker-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  flex-shrink: 0;
+}
+
+.color-picker-wrapper input[type="color"] {
+  width: 60px;
+  height: 60px;
+  margin-left: -10px;
+  margin-top: -10px;
+  cursor: pointer;
+}
+
+.add-column-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+/* Central Columns Runway Track */
+.board-columns {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto; /* Adds custom scroll bars cleanly if content exits layout width bounds */
+  padding: 12px 24px 24px 24px;
+  min-height: 600px;
+  scroll-behavior: smooth;
+  width: 100vw; /* Spans the max width limits of parent container beautifully */
+  box-sizing: border-box;
+  background-color: #fafafa;
+  border-radius: 12px;
+}
+
+/* Custom Webkit scrollbars styling profiles */
+.board-columns::-webkit-scrollbar {
+  height: 10px;
+}
+
+.board-columns::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.board-columns::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.board-columns::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* Custom Notification Toast Component Positioning */
+.custom-toast-banner {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background-color: #ff4d4f;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease-out;
+  z-index: 100000;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
